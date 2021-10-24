@@ -31,8 +31,10 @@ Under the resources map, you only have to define which resources you need to imp
 
 * to_import : Resource name of the provider
 * import_key: The identifier key in the resource definition
-* prefix: The prefix to refer real resource
-* suffix: The suffix to refer real resource
+
+* prefix: The prefix to refer real resource. Because some of the resources like AWS SNS requires a direct arn name so that you have to set a arn prefix in front of the resource name.You can check the example usage.
+
+* suffix: The suffix to refer real resource.
 
 After you defined your resource map you only have to run this command like that;
 
