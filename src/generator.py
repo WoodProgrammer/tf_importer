@@ -1,14 +1,14 @@
 import hcl
 
 
-def generator(_resource_type_to_import, _resource_import_key, _resource_import_prefix="", _resource_import_suffix=""):
+def generator(_terraform_file, _resource_type_to_import, _resource_import_key, _resource_import_prefix="", _resource_import_suffix=""):
     resource_map = {}
     resource_type_to_import =  _resource_type_to_import #"aws_s3_bucket"
     resource_import_key =  _resource_import_key #"bucket"
     resource_import_prefix = _resource_import_prefix #"" #"arn:aws:sns:us-west-2:0123456789012:"
     resource_import_suffix = _resource_import_suffix #""
 
-    with open('main.tf', 'r') as fp:
+    with open(_terraform_file, 'r') as fp:
         obj = hcl.load(fp)
 
     for resource in obj["resource"].keys():

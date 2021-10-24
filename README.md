@@ -38,7 +38,7 @@ After you defined your resource map you only have to run this command like that;
 
 
 ```sh
-$ python3 main.py --file resource_mapping.yaml
+$ python3 main.py --file resource_mapping.yaml --directory ./infra
 
 terraform import aws_s3_bucket.b my-tf-test-bucket
 terraform import aws_sns_topic.user_updates arn:aws:sns:us-west-2:0123456789012:user-updates-topic
