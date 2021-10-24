@@ -1,10 +1,12 @@
 import yaml
 from generator import *
+import optparse
+
 
 class ResourceMapping(object):
 
-    def __init__(self):
-        _file_name = "resource_mapping.yaml"
+    def __init__(self, file_name="resource_mapping.yaml"):
+        _file_name = file_name
         self.resource_content = None
 
         with open(_file_name, "r") as stream:
@@ -30,5 +32,18 @@ class ResourceMapping(object):
 
 
 if __name__ == "__main__":
-    obj = ResourceMapping()
+
+    parser = optparse.OptionParser()
+
+    parser.add_option('-f', '--file',
+        action="store", dest="file",
+        help="Confiuration file defintion of resource mapping",
+        default="resource_mapping.yaml"
+    )
+
+    (options, args) = parser.parse_args()
+    data = vars(options)
+    file_name = data["file"]
+
+    obj = ResourceMapping(file_name="{}".format(file_name))
     obj.get_import_commands()
