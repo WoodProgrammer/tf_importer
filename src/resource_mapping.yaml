@@ -1,0 +1,24 @@
+resources:
+  buckets:
+    to_import: aws_s3_bucket
+    import_key: bucket
+    prefix: ""
+    suffix: ""
+
+  sns_topics:
+    to_import: aws_sns_topic
+    import_key: name
+    prefix: "arn:aws:sns:us-west-2:0123456789012:"
+    suffix: ""
+
+  rds_cluster:
+    to_import: aws_rds_cluster
+    import_key: cluster_identifier
+    prefix: ""
+    suffix: ""
+
+  eks:
+    to_import: aws_eks_cluster
+    import_key: name
+    prefix: ""
+    suffix: ""
