@@ -2,6 +2,10 @@
 
 This tool helps to generate terraform import commands for the huge terraform stack. If you want to import terraform resources to make your configuration and terraform states under the same state you can use this tool for the huge terraform stacks.
 
+The tools like <a href="https://former2.com/">former2</a> allows us to generate entire AWS stack but while you are importing this, that can take too much time.
+tf_import helps to generate import commands for the huge amount of stacks.
+
+
 # How it works 
 The most important configuration file is <b>resource_mapping.yaml</b> file, this file contains the configuration map and provider specific keys based on your provider.
 
